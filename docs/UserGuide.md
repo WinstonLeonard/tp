@@ -4,21 +4,24 @@ title: User Guide
 ---
 
 # Welcome to TuitionConnect's User Guide!
-:rocket: Introducing **TuitionConnect**: Revolutionizing your Tutoring Business! :rocket:
+:rocket: Introducing **TuitionConnect**: Revolutionising your Tutoring Business! :rocket:
 
-Fed up with setting up numerous unorganized spreadsheets on Microsoft Excel or Google Sheets to handle the administrative side of you tutoring business?
+Fed up with setting up numerous unorganised spreadsheets on Microsoft Excel or Google Sheets to handle the administrative side of you tutoring business?
 
 Or feeling overwhelmed with the ugly-looking chaos of your Google Calendar as your number of teaching schedules increase?
 
-Say goodbye to all this mess with the help of **TuitionConnect**: the ultimate desktop app designed to streamline the administrative and financial tasks of your tuition business!
+Say goodbye to all this mess with the help of **TuitionConnect**: the ultimate desktop app designed to streamline the administrative and financial tasks of your tutoring business!
 
 This user guide will teach you how to install **TuitionConnect** from scratch, as well as providing information about the interesting features of **TuitionConnect**. 
+
+<div style="page-break-after: always;"></div>
 
 ## Table of Contents
 
 <!-- TOC -->
 * [Welcome to TuitionConnect's User Guide!](#welcome-to-tuitionconnects-user-guide)
   * [Table of Contents](#table-of-contents)
+  * [<div style="page-break-after: always;"></div>](#div-stylepage-break-after-alwaysdiv)
   * [Introduction](#introduction)
   * [Using this guide](#using-this-guide)
   * [Symbols and Syntax](#symbols-and-syntax)
@@ -36,13 +39,13 @@ This user guide will teach you how to install **TuitionConnect** from scratch, a
     * [Clearing all entries : `clear`](#clearing-all-entries--clear)
     * [Marking a tutee as paid : `paid`](#marking-a-tutee-as-paid--paid)
     * [Marking a tutee as unpaid : `unpaid`](#marking-a-tutee-as-unpaid--unpaid)
-    * [Show all the unpaid tutees : `list unpaid`](#show-all-the-unpaid-tutees--list-unpaid)
     * [Mark all tutee as unpaid: `unpaidAll`](#mark-all-tutee-as-unpaid-unpaidall)
     * [Finding Free Time : `freeTime`](#finding-free-time--freetime)
     * [Undo previous command : `undo`](#undo-previous-command--undo)
     * [Redo previous undone command : `redo`](#redo-previous-undone-command--redo)
-    * [Calculating Monthly Revenue: `rev`](#calculating-monthly-revenue-rev)
+    * [Calculating monthly revenue: `rev`](#calculating-monthly-revenue-rev)
     * [Exiting the program : `exit`](#exiting-the-program--exit)
+  * [<div style="page-break-after: always;"></div>](#div-stylepage-break-after-alwaysdiv-1)
   * [FAQ](#faq)
   * [Known issues](#known-issues)
   * [Command summary](#command-summary)
@@ -58,6 +61,7 @@ This user guide will teach you how to install **TuitionConnect** from scratch, a
     * [Parameter](#parameter)
 <!-- TOC -->
 
+<div style="page-break-after: always;"></div>
 --------------------------------------------------------------------------------------------------------------------
 ## Introduction
 TuitionConnect is a **desktop app** built for tutors and tutoring businesses to simplify the process of 
@@ -76,7 +80,11 @@ paired up with simple and beginner-friendly features, anyone can learn how to us
 3. **Calendar Sanity**: Prevent clashes in your schedules, and find slots where you are available!
 
 :bulb: **Make the Switch Today!**
-Transform your tutoring experience with **TuitionConnect!** Jump straight to the [Quick Start Section](#quick-start) and experience **TuitionConnect** today!
+Transform your tutoring experience with **TuitionConnect!** Jump straight to the [Quick Start Section](#quick-start) and experience **TuitionConnect** now!
+
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
+
+<div style="page-break-after: always;"></div>
 
 ## Using this guide
 If you're feeling a bit lost, worry not!
@@ -96,13 +104,16 @@ the in-depth explanation for each command's format and use cases.
 At last, we have also included a [Command Summary](#command-summary) section for when you become proficient at using
 TuitionConnect to refer quickly to any commands that you may need!
 
-Still unsure about the more technical terms used in this guide? Fret not, as we also provide a [glossary](#glossary)
+Still unsure about the more technical terms used in this guide? Fret not, refer to the [glossary](#glossary)
 to better understand all the technical jargons!
 
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
+
+<div style="page-break-after: always;"></div>
 
 ## Symbols and Syntax
 
-Throughout this User Guide, there might 
+Throughout this User Guide, you might run into the following symbols and syntax.
 
 | Symbol/Syntax                                   | Meaning                                                                                                                                         |
 |-------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -112,10 +123,17 @@ Throughout this User Guide, there might
 | `Highlighted text block`                        | [Commands](#command) or [parameters](#parameter) that you can enter into our application, or text that is directly displayed in our application |
 | [Hyperlinked text in blue](#symbols-and-syntax) | When it is pressed, it should lead you to another section in the document or to an external link.                                               |
 
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
+
+<div style="page-break-after: always;"></div>
+
 ## Layout
 The image below describes TuitionConnect's layout with some description for each component.
 ![Layout](images/Layout.png)
 
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
+
+<div style="page-break-after: always;"></div>
 
 ## Quick start
 
@@ -127,6 +145,7 @@ The image below describes TuitionConnect's layout with some description for each
 
 4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar TuitionConnect.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. The left list contains information about your tutees. The right list displays your teaching schedule for the next 7 days. Note how the app contains some sample data.<br>
+   <br>
    ![Ui](images/Ui.png)
 
 5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
@@ -139,6 +158,10 @@ The image below describes TuitionConnect's layout with some description for each
    * `delete 3` : Deletes the 3rd tutee shown in the current list.
 
 6. Refer to the [Features](#features) below for details of each command.
+
+   [Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
+
+<div style="page-break-after: always;"></div>
 
 ## Command Format
 
@@ -154,6 +177,10 @@ The image below describes TuitionConnect's layout with some description for each
 * Extraneous parameters added after commands that do not take in parameters (such as `help`, `list`, `exit`, `undo`, `redo` and `clear`) will be ignored.<br>
   e.g. if the command typed is `undo 123`, it will be interpreted as `undo`.
 
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
+
+<div style="page-break-after: always;"></div>
+
 ## Parameters Requirement
 Here are the [parameter](#glossary) requirements of commonly used parameters by [commands](#glossary) in the [**Features**](#features) section below.
 
@@ -168,28 +195,38 @@ Here are the [parameter](#glossary) requirements of commonly used parameters by 
 | **`DAY`**      | Day of weekly recurring lesson of the tutee                 | Full name of day or first three letters of the full name <br> **Non-case sensitive** <br> Example: `Mon`/`Monday`/`monday`                                                                                                                           |
 | **`BEGIN`**    | Begin time of a tutee's weekly recurring lesson             | In **HHMM** format                                                                                                                                                                                                                                   |
 | **`END`**      | End time of a tutee's weekly recurring lesson               | In **HHMM** format                                                                                                                                                                                                                                   |
-| **`PAYRATE`**  | dollars per hour you make teaching this tutee               | Numbers only <br> Numbers must be **non-negative**                                                                                                                                                                                                   |
+| **`PAYRATE`**  | dollars per hour you make teaching this tutee               | Numbers up to two decimal places only <br> Numbers must be **non-negative**                                                                                                                                                                          |
 | **`INDEX`**    | The index number of the tutee shown in the tutee list panel | Used in [`delete`](#deleting-a-tutee-delete) [`edit`](#editing-a-tutee--edit) [`unpaid`](#marking-a-tutee-as-unpaid--unpaid) and [`paid`](#marking-a-tutee-as-paid--paid) commands <br> Must be a **positive number** <br> Example: (1,2,3,...) <br> |
 | **`DURATION`** | The duration of a time slot in **minutes**                  | Used in [`freeTime`](#finding-free-time--freetime) Must be a **positive integer** <br> Example: (60,120,...) <br>                                                                                                                                    |
 
 <br>
 
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
+
+<div style="page-break-after: always;"></div>
+
 ## Features
 
 ### Viewing help : `help`
 
-Shows a message that helps redirects you to the user guide.
+**Description**: Redirects you to the user guide if you are ever lost.
 
 **Format**: `help`
 
+**Sample Execution**: `help`
+
+![Help after](images/HelpAfter.png)
+
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
+
 ### Adding a tutee : `add`
 
-**Description**: Adds a tutee into the list.
+**Description**: Adds new tutees you are tutoring into the list.
 
 **Format**: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS sb/SUBJECT d/DAY b/BEGIN e/END pr/PAYRATE`
 
 :exclamation: Things that can cause the `add` command to fail:
-1. Putting invalid inputs into the add command.
+1. Inserting invalid inputs into the add command.
    - :bulb: Check the [Parameter Requirements](#parameters-requirement) for valid parameter inputs.
 2. Adding a tutee that will result in duplicate tutees.
    - :information_source: Two tutees are considered duplicates if they have the same name and phone number
@@ -204,136 +241,118 @@ Shows a message that helps redirects you to the user guide.
 
 ![Add after](images/Add%20after.png)
 
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
+
 ### Listing tutees : `list`
 
 **Description**: View the tutees that you are currently teaching.
 
-**Format**: `list [DAY]`
+**Format**: `list [DAY]/[unpaid]`
 
-* :information_source: The `DAY` parameter is optional.
-  * Without stating a specified `DAY`, `list` will display all of your tutees
+:information_source: The `DAY` and `unpaid` parameters are optional.
+  * Without stating a specified `DAY` or `unpaid`, `list` will display all of your tutees
   * When `DAY` is specified, only tutees whose lessons matches the specified `DAY` will be displayed
+  * When `unpaid` is included, only tutees who have yet to pay for their lessons will be displayed
+  * `list` can only accept up to one parameter in a single command
 
-* :exclamation: If the `DAY` parameter does not adhere to the specified format, the system will treat this as an invalid command
-  - :bulb: Check the [Parameter Requirements](#parameters-requirement) for valid parameter inputs.
+
+
+:exclamation: Things that can cause the `list` command to fail:
+1. If the `DAY` parameter does not adhere to the specified format, the system will treat this as an invalid command.
+    - :bulb: Check the [Parameter Requirements](#parameters-requirement) for valid parameter inputs.
+2. Adding both `DAY` and `unpaid` parameters.
 
 **Examples**:
 * `list`
 * `list monday`
+* `list unpaid`
 
 **Sample Execution**:  `list monday`
 
 ![list by day command](images/ListByDayCommand.png)
 
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
+
 ### Finding a tutee : `find`
 
-**Description** : Find tutees in the current list.
+**Description** : Find tutees quickly in your current list.
 
-**Format**: `find n/[NAME] sb/[SUBJECT]`
+**Format**: `find [n/NAME] [sb/SUBJECT]`
 
-> [!NOTE]  
-> Find takes at least one of the two fields to be able to find for tutees.
+:information_source: `find` requires at least one of the two fields to be able to find for tutees and is non-case sensitive.
 
-**Expected input:**
+:information_source: As long as the tutee's `NAME` and/or `SUBJECT` contains the given keywords, the tutee will be displayed.
+  * Example: `find n/AL` returns a tutee named "ALICE"
 
-* **Name (Optional field)**: String composed of character between A-Z and a-z
-* **Subject (Optional field)**: String without restriction in characters
+:information_source: Both n/ and sb/ prefixes take one word as input each.
 
-> [!NOTE]  
-> Both n/ and sb/ prefixes take one word as input.
+:exclamation: Things that can cause `find` command to fail:
+1. Inserting invalid inputs into the find command.
+   - :bulb: Check the [Parameter Requirements](#parameters-requirement) for valid parameter inputs.
+2. Inserting multiple word inputs for any of the two fields.
+   - :exclamation: As mentioned above, both prefixes can only take one word each as input.
 
-**Expected Output when the command succeeds:** X tutees listed!
+**Examples**:
+* `find n/Alex`
+* `find sb/Maths`
+* `find n/Alex sb/Maths`
 
-**Expected Output when the command fails:**
+**Sample Execution**: `find n/Alex sb/Maths`
 
-* **More than one word input for prefix n/**: Name can only take one word.
-* **More than one word input for prefix sb/**: Subject can only take one word.
-* **More than one word input for both prefix n/ and sb/**: Name can only take one word.
+![findAfter](images/findAfter.png)
 
-* **Invalid Input for prefix name n/**:
-Names should only contain alphanumeric characters and spaces,
-  and it should not be blank
-* **Invalid Input for prefix subject sb/**: Subject can take any values, and it should not be blank.
-* **Invalid Prefix other than name n/ and subject sb/**:
-
-  Invalid command format!
-  find: Find persons with names or subjects matching the specified keywords (case-insensitive).
-  Parameters: n/NAME sb/SUBJECT
-
-  Examples:
-1. find n/Alice sb/Maths
-2. find n/Alice
-3. find sb/Maths
-
-* **No input after prefix name n/**: Names should only contain alphanumeric characters and spaces,
-and it should not be blank
-* **No input after prefix subject sb/**: Subject can take any values, and it should not be blank.
-* **No input after prefixes name n/ and subject sb/**: Names should only contain alphanumeric characters and spaces,
-  and it should not be blank
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
 
 ### Editing a tutee : `edit`
 
-**Description**: Edit a tutee in the current list.
+**Description**: Edit a tutee in your current list.
 
-**Format**: `edit INDEX n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS s/SUBJECTS d/DAY b/BEGIN end/END pr/PAYRATE`
+**Format**: `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [s/SUBJECTS] [d/DAY] [b/BEGIN] [end/END] [pr/PAYRATE`]
 
-**Expected Input**:
-* **Index (Compulsory Field)**: Numbers between 1 to the number of people inside the list.
-* **Name (Optional field)**: String composed of character between A-Z and a-z.
-* **Phone number (Optional field)**: 8 digit number.
-* **Email (Optional field)** String with restrictions in characters (XXXXXXXX@emaildomain)
-* **Address (Optional field)**: String without restriction in characters.
-* **Subject (Optional field)**: String without restriction in characters.
-* **Day (Optional field)**: String with restrictions in characters, non-case sensitive (Mon/Monday/Tue/Tuesday/Wed/Wednesday/Thu/Thursday/Fri/Friday/Sat/Saturday/Sun/Sunday).
-* **Begin (Optional field)**: String with restrictions (HHMM).
-* **End (Optional field)**: String with restrictions (HHMM).
-* **PayRate (Optional field)** String with restrictions in characters, only numbers allowed (no negative numbers).
+:information_source: `edit` requires at least one of the fields to be present to be able to edit.
 
-**Expected Output when the command succeeds**: Successfully edited XXX(Name)
+:exclamation: Things that can cause `edit` command to fail:
+1. Inserting invalid inputs into the `edit` command.
+    - :bulb: Check the [Parameter Requirements](#parameters-requirement) for valid parameter inputs.
+2. Editing a tutee that will result in duplicate tutees.
+    - :information_source: Two tutees are considered duplicates if they have the same name and phone number.
+3. Editing a tutee that will result in clashing schedules.
+    - :bulb: Use the [`freeTime` command](#finding-free-time--freetime) to list down timings when you are available and prevent schedule clashes.
 
-**Expected Output when the command fails**:
-
-* **Invalid Name**: Names should only contain alphanumeric characters and spaces, and it should not be blank
-* **Duplicate tutee**: This tutee already exists
-* **Invalid Phone number**: Phone numbers should only contain numbers, and it should be at least 3 digits long
-* **Invalid Email**: Emails should be of the format local-part@domain and adhere to the following constraints:  
-  1\. The local-part should only contain alphanumeric characters and these special characters, excluding the parentheses, (+_.-). The local-part may not start or end with any special characters.  
-  2\. This is followed by a '@' and then a domain name. The domain name is made up of domain labels separated by periods.
-* **Invalid Address**: Addresses can take any values, and it should not be blank
-* **Invalid Day**: Days should be written using their full names or their first three letters, and it should not be blank
-* **Invalid Begin**: Begin has a format of HHMM
-* **Invalid End**: That is not a valid time format. End has a format of HHMM
-* **Invalid PayRate**: PayRate can be either integers or decimals of up to 2 decimal places. It cannot be negative
 
 **Examples**:
+* `edit 1 p/91234567 d/Sun`
+* `edit 2 n/Betsy Crower a/Betsy street, block 110, #03-02`
 
-To edit the phone number and day of tutoring of your first tutee in list:
-*  `edit 1 p/91234567 d/Sun`
+**Sample Execution**: `edit 2 n/Betsy Crower a/Betsy street, block 110, #03-02`
 
-To edit name and address of your second tutee in list:
-*  `edit 2 n/Betsy Crower a/Betsy street, block 110, #03-02`
+![editAfter](images/editAfter.png)
 
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
 
 ### Deleting a tutee: `delete`
 
-**Description**: Deletes the specific tutee from the list.
+**Description**: Deletes the specific tutee from your list.
 
 **Format**: `delete INDEX`
 
-**Expected Input**:
+:exclamation: Things that can cause `delete` command to fail:
+1. Inserting invalid `INDEX` into the `delete` command.
+    - :information_source: `INDEX` should not be smaller than 1 and larger than
+      the number of tutees in the list.
 
-* **Index (Compulsory Field)**: Numbers between 1 to the number of people inside the list.
-
-**Expected Output when the command succeeds**: Successfully deleted NAME from the list
-
-**Expected Output when the command fails**: The tutee index provided is invalid
-
-Examples:
+**Examples**:
 * `list` followed by `delete 2` deletes the 2nd person in the list.
+
+**Sample Execution**: `delete 2`
+
+![deleteAfter](images/deleteAfter.png)
+
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
 
 ### Clearing all entries : `clear`
 
-**Description**: Want to start from scratch? Clears all entries from the tutee list.
+**Description**: Clears all entries from your list to start from scratch.
 
 **Format**: `clear`
 
@@ -344,39 +363,61 @@ Examples:
 
 ![ClearCommand.png](images/ClearCommand.png)
 
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
+
 ### Marking a tutee as paid : `paid`
 
-**Description**: Mark the specific tutee as paid in the list.
+**Description**: Mark a specific tutee as paid in your list.
 
 **Format**: `paid INDEX`
 
+:exclamation: Things that can cause `paid` command to fail:
+1. Inserting invalid `INDEX` into the `paid` command.
+    - :information_source: `INDEX` should not be smaller than 1 and larger than
+      the number of tutees in the list.
+
 * **`INDEX`**: Numbers between 1 to the number of people inside the list.
 
-Examples:
+**Examples**:
 * `list` followed by `paid 1` marks the first person as paid in the list.
+
+**Sample Execution**:  `paid 1`
+
+![paidexample](images/paidexample.png)
+
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
 
 ### Marking a tutee as unpaid : `unpaid`
 
-**Description**: Mark the specific tutee as not paid in the list.
+**Description**: Mark a specific tutee as not paid in your list.
 
 **Format**: `unpaid INDEX`
 
-* **Index**: Numbers between 1 to the number of people inside the list.
+:exclamation: Things that can cause `unpaid` command to fail:
+1. Inserting invalid `INDEX` into the `unpaid` command.
+    - :information_source: `INDEX` should not be smaller than 1 and larger than
+      the number of tutees in the list.
 
-Examples:
+**Examples**:
 * `list` followed by `unpaid 2` marks the 2nd person as not paid in the list.
 
-### Show all the unpaid tutees : `list unpaid`
+**Sample Execution**:  `unpaid 2`
 
-**Description**: Shows all the unpaid tutees in your list.
+![unpaidexample](images/unpaidexample.png)
 
-Format: `list unpaid`
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
 
 ### Mark all tutee as unpaid: `unpaidAll`
 
-**Description** : Mark all tutees in the current displayed list as not paid.
+**Description** : Mark all tutees in your current displayed list as not paid.
 
-Format: `unpaidAll`
+**Format**: `unpaidAll`
+
+**Sample Execution**:  `unpaidAll`
+
+![unpaidAllexample](images/unpaidAllexample.png)
+
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
 
 ### Finding Free Time : `freeTime`
 
@@ -394,56 +435,60 @@ Format: `unpaidAll`
 
 ![freeTime after](images/freeTime%20after.png)
 
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
+
 ### Undo previous command : `undo`
 
-**Description**: Typed something wrong? Undo the most recent command that can modify the tutee data.
+**Description**: Undo the most recent command if you made a mistake.
 
 **Format**: `undo`
 
-* :information_source: You can only undo `add`,`clear`,`delete`,`edit`,`redo`,`paid`,`unpaid` and `unpaidAll` commands.
-
-**Examples**:
-* `undo`
+:information_source: You can only undo `add`,`clear`,`delete`,`edit`,`redo`,`paid`,`unpaid` and `unpaidAll` commands.
 
 **Sample Execution**:  `clear` followed by `undo`
 1. `clear` deletes all tutee in the tutee list
 
-![clearCommand](images/clearCommand.png)
+![clearCommand](images/ClearCommand.png)
 
 2. `undo` restores all cleared tutees
 
 ![undoCommand](images/undoCommand.png)
 
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
+
 ### Redo previous undone command : `redo`
 
-**Description**: Changed your mind again? Redo the most recent command that was undone.
+**Description**: Redo the most recent command that was undone if you changed your mind.
 
 **Format**: `redo`
 
-**Examples**:
-* `redo`
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
 
-### Calculating Monthly Revenue: `rev`
+### Calculating monthly revenue: `rev`
 
-**Description**: Displays the total monthly revenue calculated from all tutees.
+**Description**: Calculate the total monthly revenue from all your tutees.
 
 **Format**: `rev`
 
-**Expected Output**: Successfully calculated <br>
-&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-Total monthly revenue: *$monthlyrevenue*
+:information_source: `rev` command is time-sensitive (i.e. If the lesson occurrences varies between months, the value adjusts accordingly)
+
+**Sample Execution:** `rev`
+
+![Revenue Command Success](images/RevenueCommandSuccess.png)
+
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
 
 ### Exiting the program : `exit`
 
-Exits the program.
+**Description**: Exits the program when you are done.
 
-Format: `exit`
+**Format**: `exit`
 
-* The application window closes automatically after you type the command `exit`
+:information_source: The application window closes automatically after you type the command `exit`
 
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
 
-
+<div style="page-break-after: always;"></div>
 --------------------------------------------------------------------------------------------------------------------
 
 ## FAQ
@@ -451,11 +496,22 @@ Format: `exit`
 **Q**: How do I transfer my existing data to another machine?<br>
 **A**: Overwrite the empty `tuitionconnect.json` file in the machine by deleting it and replacing it with the `tuitionconnect.json` that contains the data
 
+**Q**: Where is my data stored?<br>
+**A**: Your data is stored locally in a file named `tuitionconnect.json` 
+
+**Q**: Is there any way I can give feedback if I face any issues?<br>
+**A**: You can submit your issues [here](https://github.com/AY2324S1-CS2103T-F10-4/tp/issues)
+
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## Known issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
+
+
+<div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -480,6 +536,8 @@ Format: `exit`
 | **redo**        | `redo`                                                                                                                                                                                                                                 |
 | **rev**         | `rev`                                                                                                                                                                                                                                  |
 | **exit**        | `exit`                                                                                                                                                                                                                                 |
+
+[Back to top &#8593;](#welcome-to-tuitionconnects-user-guide)
 
 ## Glossary
 

@@ -2,14 +2,72 @@
 layout: page
 title: Developer Guide
 ---
-* Table of Contents
-  {:toc}
+## Table of Contents
+<!-- TOC -->
+  * [**Acknowledgements**](#acknowledgements)
+  * [**Setting up, getting started**](#setting-up-getting-started)
+  * [**Design**](#design)
+    * [Architecture](#architecture)
+    * [UI component](#ui-component)
+    * [Logic component](#logic-component)
+    * [Model component](#model-component)
+    * [Storage component](#storage-component)
+    * [Common classes](#common-classes)
+  * [**Implementation**](#implementation)
+    * [Add feature](#add-feature)
+      * [Design considerations:](#design-considerations)
+    * [List feature](#list-feature)
+      * [Design considerations:](#design-considerations-1)
+    * [Find feature](#find-feature)
+      * [Design considerations:](#design-considerations-2)
+    * [Edit feature](#edit-feature)
+      * [Design considerations:](#design-considerations-3)
+    * [Find Free Time feature](#find-free-time-feature)
+      * [Design Considerations](#design-considerations-4)
+    * [Calculate monthly revenue](#calculate-monthly-revenue)
+      * [Design Considerations](#design-considerations-5)
+    * [Undo/redo feature](#undoredo-feature)
+      * [Design considerations:](#design-considerations-6)
+    * [Mark paid/unpaid features](#mark-paidunpaid-features)
+      * [Design considerations:](#design-considerations-7)
+  * [**Documentation, logging, testing, configuration, dev-ops**](#documentation-logging-testing-configuration-dev-ops)
+  * [**Appendix: Requirements**](#appendix-requirements)
+    * [Product scope](#product-scope)
+    * [User stories](#user-stories)
+    * [Use cases](#use-cases)
+    * [Non-Functional Requirements](#non-functional-requirements)
+    * [Glossary](#glossary)
+  * [**Appendix: Instructions for manual testing**](#appendix-instructions-for-manual-testing)
+    * [Launch and shutdown](#launch-and-shutdown)
+    * [List tutee(s)](#list-tutees)
+    * [Adding a tutee](#adding-a-tutee)
+    * [Deleting a tutee](#deleting-a-tutee)
+    * [Finding a tutee](#finding-a-tutee)
+    * [Editing a tutee](#editing-a-tutee)
+    * [Find free time](#find-free-time)
+    * [Marking a tutee as paid](#marking-a-tutee-as-paid)
+    * [Marking a tutee as not paid](#marking-a-tutee-as-not-paid)
+    * [Listing all unpaid tutees](#listing-all-unpaid-tutees)
+    * [Undo command](#undo-command)
+    * [Redo command](#redo-command)
+    * [Manually editing data file](#manually-editing-data-file)
+  * [**Planned Enhancements**](#planned-enhancements)
+    * [Batch Processing for Paid Command](#batch-processing-for-paid-command)
+    * [Scheduled Unpaid Marking](#scheduled-unpaid-marking)
+    * [Find using multiple keywords](#find-using-multiple-keywords)
+    * [Maximum PayRate](#maximum-payrate)
+    * [Prevent Commands meant to Modify Tutee Data from Not Changing the Data](#prevent-commands-meant-to-modify-tutee-data-from-not-changing-the-data)
+    * [Enable Group Lessons](#enable-group-lessons)
+    * [Enhance Edit Feature](#enhance-edit-feature)
+<!-- TOC -->
+
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Acknowledgements**
 
-* {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
+* This project is adapted from **[AddressBook 3(AB3)](https://github.com/se-edu/addressbook-level3)**
+* Undo and Redo features are adapted from proposed implementations from **[AddressBook 3(AB3)](https://github.com/se-edu/addressbook-level3)**
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -223,6 +281,19 @@ The `FindCommand` extends the `Command` class. It allows the user to find for tu
 subject using their prefixes. Both parameters are optional, but at least one of them must be specified for the `find`
 command to work properly.
 
+`NameContainsKeywordsPredicate` is a class which takes a list of strings as input, and is used to test whether the input
+matches any of the names inside the tutee list.
+
+`SubjectContainsKeywordsPredicate` is a class which takes a list of string as input, and is used to test whether the input
+matches any of the subjects inside the tutee list.
+
+As for `NameSubjectPredicate`, it takes in two parameters `NameContainsKeywordsPredicate` and 
+`SubjectContainsKeywordsPredicate` as to accommodate for both input of fields n/ and sb/.
+
+However, since the method `updateFilteredPersonList` can only take one parameter, the merging of both 
+`NameContainsKeywordsPredicate` and `SubjectContainsKeywordsPredicate` into `NameSubjectPredicate` is the implementation
+we decided to go with.
+
 `FindCommand` takes in the following fields:
 * **Name (Optional field)**: String composed of character between A-Z and a-z.
 * **Subject (Optional field)**: String without restriction in characters.
@@ -312,16 +383,16 @@ The following activity diagram summarizes what happens when a user executes a `f
     * Cons: During the first round of user-testing, some new users were confused on how to use the command.
 
 
-### Calculate total revenue for the month
+### Calculate monthly revenue
 
 
 The `RevenueCommand` extends the `command class`. The command first gets a list containing all tutees.
-The total revenue monthly can be calculated now by iterating through the list and calling `Person#getMonthlyFee`. <br>
+The total monthly revenue can be calculated now by iterating through the list and calling `Person#getMonthlyFee`. <br>
 
 The total monthly revenue is calculated as such: <br>
 *Total Monthly Revenue* = Sum of every tutee's `monthlyFee`
 
-The following sequence diagram shows how the total revenue command works:
+The following sequence diagram shows how the `RevenueCommand` works:
 ![RevenueSequenceDiagram.png](images/RevenueSequenceDiagram.png)
 
 #### Design Considerations
@@ -481,7 +552,6 @@ The following sequence diagram shows how unpaidAll command works:
 
 **Value proposition**: It is tedious for tutors to keep track of multiple students and this is done conventionally through calendar applications. Simplify tutoring business with TuitionConnect. Effortlessly manage students, schedules and progress tracking while ensuring financial organization in an all in one product at a faster rate than non CLI applications.
 
-x
 
 ### User stories
 
@@ -727,9 +797,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions**
 - 2a. The user does not have any free slots available.
-    - 2a1. System informs user that there is no available timeslots.
-      <br>
-      <br>
+<<<<<<< HEAD
+  - 2a1. System informs user that there is no available timeslots.
+    <br>
+    <br>
 
 **Use case: UC12 - Get monthly revenue**
 
@@ -739,10 +810,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 2. System displays the monthly revenue figure.
 
    Use case ends.
-
-*{More to be added}*
-<br>
-<br>
+   <br>
+   <br>
 
 ### Non-Functional Requirements
 
@@ -913,10 +982,12 @@ testers are expected to do more *exploratory* testing.
 
     2. Test case: `freeTime d/Mon dur/30 b/1930 end/2130` <br>
        Expected: The result <br>
+
        _Here is your list of free time:_ <br>
        _Free from 19:30 - 20:00_ <br>
        _Free from 21:00 - 21:30_ <br>
        should be displayed in the status message.
+
 
 ### Marking a tutee as paid
 
@@ -982,19 +1053,60 @@ testers are expected to do more *exploratory* testing.
     2. Test case: `redo`<br>
        Expected: No command is redone. Error details shown in the status message.
 
-### Saving data
+### Manually editing data file
 
-1. Dealing with missing/corrupted data files
+<div markdown="block" class="alert alert-info">
+**:information_source: Info:** <br>
+This section assumes that you are an advanced user and understand some basic computing terminologies
+</div>
 
-    1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
+The default save file is called `"tuitionconnect.json"`.
 
-1. _{ more test cases …​ }_
+Below is an example of a valid save file format:
+```
+{
+  "persons" : [ {
+    "name" : "Bernice Yu",
+    "phone" : "99272758",
+    "email" : "berniceyu@example.com",
+    "address" : "Blk 30 Lorong 3 Serangoon Gardens, #07-18",
+    "subject" : "Physics",
+    "day" : "TUESDAY",
+    "begin" : "1000",
+    "end" : "1100",
+    "paid" : false,
+    "payRate" : "25.00"
+  }, {
+    "name" : "Charlotte Oliveiro",
+    "phone" : "93210283",
+    "email" : "charlotte@example.com",
+    "address" : "Blk 11 Ang Mo Kio Street 74, #11-04",
+    "subject" : "Chemistry",
+    "day" : "WEDNESDAY",
+    "begin" : "1200",
+    "end" : "1300",
+    "paid" : false,
+    "payRate" : "30.00"
+  } ]
+}
+```
+
+| Parameter     | Description                                     | Requirement / Remarks                                                                                                      |
+|---------------|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| **`name`**    | Name of tutee                                   | [Alphanumeric](#glossary) and may contain spaces                                                                           |
+| **`date`**    | Date of the upcoming application task           | In **dd-mm-yyyy** format                                                                                                   |
+| **`phone`**   | Contact number of tutee                         | Any number at least 3 digits long                                                                                          |
+| **`email`**   | Email address of tutee                          | In **XXXXXXXX@emaildomain** format <br> Example: `johndoee@gmail.com`                                                      |
+| **`address`** | Address of the tutee                            | [Alphanumeric](#glossary) and may contain spaces                                                                           |
+| **`subject`** | Subject of the tutee                            | [Alphanumeric](#glossary) and may contain spaces                                                                           |
+| **`day`**     | Day of weekly recurring lesson of the tutee     | Full name of day or first three letters of the full name <br> **Non-case sensitive** <br> Example: `Mon`/`Monday`/`monday` |
+| **`begin`**   | Begin time of a tutee's weekly recurring lesson | In **HHMM** format                                                                                                         |
+| **`end`**     | End time of a tutee's weekly recurring lesson   | In **HHMM** format                                                                                                         |
+| **`paid`**    | Indicates if the tutee paid                     | boolean value for whether tutee has paid                                                                                   |
+| **`payrate`** | dollars per hour you make teaching this tutee   | Numbers up to two decimal places only <br> Numbers must be **non-negative**                                                |
+
 
 ## **Planned Enhancements**
-
-1. To be able to group/tag tutees into "Tutor Groups". These tutees will be able to have the same timeslot if they belong to the same "Tutor Group"
-2. Allow tutees to have multiple lessons. Our current implementation does not allow the same tutee to have multiple lesson as a tutee is uniquely identified by their name and phone number. For example, if the user is teaching John Maths on Monday, he can't teach John Physics on a different day because the system will identify John as a duplicate tutee.
-3. Enhance the edit feature. Currently, our edit feature might result in a bug if the NAME and (DAY/BEGIN/END) fields are edited at the same time. For example, if tutee index 1 has the name John and has a lesson on Monday 20:00 - 21:00, trying to do `edit 1 n/Doe end/2030` will result in an error (throwing the message that this date clashes with an existing scheduke).
 
 ### Batch Processing for Paid Command
 
@@ -1012,7 +1124,7 @@ Idea: Add a scheduling mechanism within the command execution to mark individual
 
 Reason: To create a more sophisticated find feature for the best results. This enhancement allows users to get more specific results tailored to their criteria.
 
-Idea: Modify the NameContainsKeywordPredicate and SubjectContainsKeywordPredicate to accept multiple word inputs (e.g. "find n/Alex Yeoh sb/Maths Chemistry).
+Idea: Modify the NameContainsKeywordsPredicate and SubjectContainsKeywordsPredicate to accept multiple word inputs (e.g. "find n/Alex Yeoh sb/Maths Chemistry).
 
 ### Maximum PayRate
 
@@ -1029,3 +1141,21 @@ is saved. The system should inform the user that this command will not modify an
 
 Idea: Create a `Model#isSameData()` to compare whether the state of the tutee data before and after the command execution will be the same. If
 `Model#isSameData()` returns true, a `CommandException` should be thrown and the system should inform the user that this command will not modify any data.
+
+### Enable Group Lessons
+
+Reason: Current `Lesson` implementation prevents any lessons clashes, that is no two `Person` objects can have lessons that fall in same timeslots.
+However, this is based on the assumption that lessons are carried out on a one-on-one basis. Given the possibility of group lessons, having such a feature
+would allow for more flexibility in the application.
+
+Idea: Create a `GroupTag` field for `Lesson` class which contain an ID for each `Lesson` object if they are group lessons. When checking if two 
+lesson clashes, allow for lesson clash if `Lesson` objects have the same IDs which means they are the same group lesson.
+
+### Enhance Edit Feature
+Reason: Currently, the edit feature might result in a bug if the NAME and (DAY/BEGIN/END) fields are edited at the same time. 
+For example, if tutee index 1 has the name John and has a lesson on Monday 20:00 - 21:00, trying to do `edit 1 n/Doe end/2030` 
+will result in an error (throwing the message that this date clashes with an existing schedule). This is because it considers the
+pre-edited tutee as a schedule clash.
+
+Idea: Have an additional check with the index. If the edited person has the same index as the pre-edited person, then the
+system should allow the edit to happen.
